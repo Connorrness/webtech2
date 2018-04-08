@@ -9,9 +9,6 @@ var app = express();
 
 var mydb;
 
-app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, "/views"));
-
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   mydb = db.db('blogposts');
