@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+
+<div class="row"> <div class="postsbody"> <div class="card">
+  <button class="postbutton" id="modalopen"></button>
+</div> </div> </div>
+
+<div id="postBtnModal" class="postModal">
+  <div class ="modal-content">
+    <span class="close">&times</span>
+    <h2> Make a new post: </h2>
+    <textarea id="posttitle" rows ="1" cols="60" placeholder="Title"></textarea>
+    <textarea id="postcontent" rows="8" cols="60" placeholder="What do you want to say?"></textarea>
+    <br>
+    <input id="makePost" type="submit" value="Post">
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById('postBtnModal');
+  var btn = document.getElementById("modalopen");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      }
+  }
+</script>
+
+<div class="row">
+  <div class="postsbody">
+    <div class="card">
+      <button class = "postdelete" id="postDelete" onclick="delete()"></button>
+      <button class = "postedit" id="titleEdit" onclick="editTitle()"></button>
+        <h2>TITLE</h2>
+      <br>
+      <button class = "postedit" id="postEdit" onclick="editPost()"></button>
+        <p> Curruid Coinchenn; Beast of Crunching Deathtusk </p>
+
+<% include ./partials/footer %>
