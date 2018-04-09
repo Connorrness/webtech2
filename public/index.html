@@ -32,7 +32,7 @@
     <textarea id="posttitle" rows ="1" cols="60" placeholder="Title"></textarea>
     <textarea id="postcontent" rows="8" cols="60" placeholder="What do you want to say?"></textarea>
     <br>
-    <input id="makePost" type="submit" value="Post">
+    <input id="makePost" type="submit" value="Post" onclick="createPost()">
   </div>
 </div>
 
@@ -59,7 +59,7 @@
 <div class="row">
   <div class="postsbody">
     <div class="card">
-      <button class = "postdelete" id="postDelete" onclick="delete()"></button>
+      <button class = "postdelete" id="postDelete" onclick="deletePost()"></button>
       <button class = "postedit" id="titleEdit" onclick="editTitle()"></button>
         <h2>TITLE</h2>
       <br>

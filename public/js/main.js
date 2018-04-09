@@ -15,7 +15,21 @@ $(document).ready(function(){
 });
 
 function createPost(){
+  var titlepost = prompt('Post title:', '');
+  var bodypost = prompt('Post body:', '');
 
+  $.ajax({
+    type: 'POST',
+    url: '/blogposts/:id'+$(this).data().id,
+    data: {
+      title: titlepost,
+      post: bodypost
+    }
+  }).done(function(response){
+    window.location.replace('/');
+  }).fail(function(response){
+    console.log("An Error Occured");
+  });
 }
 
 function deletePost(){
@@ -62,7 +76,7 @@ function editPost(){
     $.ajax({
       type:'PUT',
       url: '/blogposts/update/'+$(this).data().id,
-      data: {title: change}
+      data: {post: change}
     }).done(function(response){
       console.log(response);
       window.location.replace('/editPost');
